@@ -15,11 +15,13 @@
 <body>
 
   <header>
-    <h1>Heather Denniss</h1>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    
-    <nav class="navbar">
+    <div class="header-content">
+      <h1>Heather Denniss</h1>
+      <button class="hamburger" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <nav class="mobile-hidden">
       <a href="#about">About</a>
       <a href="#works">Works</a>
       <a href="#education">Education</a>
@@ -27,6 +29,7 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+  
 
 <main>
   <section class="hero">
@@ -133,6 +136,14 @@
   </div>
   <p>© 2025 Heather Denniss</p>
 </footer>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
 
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('mobile-shown');
+    nav.classList.toggle('mobile-hidden');
+  });
+</script>
 </body>
 </html>
